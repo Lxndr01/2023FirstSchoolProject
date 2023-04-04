@@ -22,7 +22,7 @@ module.exports = (app, jsonParser) => {
                     longitude: parseFloat(req.body.longitude)
                 }
             })
-            res.status(200).json({ 'message': 'Successful creation' })
+            res.status(201).json({ 'message': 'Successful create' })
         } catch {
             res.status(500).json({ 'message': 'There was an error with the request!' })
         }
