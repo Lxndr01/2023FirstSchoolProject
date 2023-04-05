@@ -5,15 +5,16 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import Map from './Map';
 function EventList() {
 
-    const [events, SetEvents] = useState([])
+    const [events, SetEvents] = useState(null)
 
-    const callEvent = () => {
-        axios.get('http://localhost:18102/api/event')
+    const callEvent = async () => {
+        await axios.get('http://localhost:18102/api/event')
             .then(function (response) {
                 // handle success
-                console.log(response);
+                console.log(response.data);
                 SetEvents(response.data)
             })
             .catch(function (error) {
@@ -24,22 +25,15 @@ function EventList() {
 
     useEffect(() => {
         callEvent()
-        return () => {
-            console.log('lefutott')
-        }
+        
     }, [])
 
 // TODO: Fixing Dynamic Routing
-    return (
-        <>
-            <div>
-                <BrowserRouter>
-                    {events.map(event => (<Link to={'events/' + event.id} />))}
-                    <Route path="heroes/:id" component={Event} />
-                </BrowserRouter>
-            </div>
-        </>
-    );
+return (
+    <>
+    {events ? <Map lat={10} lng={10} events={events} /> : null}
+    </>
+)
 }
 
 export default EventList;

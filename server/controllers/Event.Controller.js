@@ -4,8 +4,6 @@ const moment = require('moment')
 
 module.exports = (app, jsonParser) => {
 
-    //TODO: Adding a single get route!
-
     app.get('/api/event', jsonParser, async (req, res) => {
         try {
             const events = await prisma.event.findMany({
@@ -15,6 +13,23 @@ module.exports = (app, jsonParser) => {
                 }
             })
             res.status(200).json(events)
+        } catch {
+            res.status(500).json({ 'message': 'There was an error with the request!' })
+        }
+    })
+
+    app.get('/api/event/:id', jsonParser, async (req, res) => {
+        try {
+            const event = await prisma.event.findFirst({
+                where: {
+                    id: req.params.id
+                },
+                include: {
+                    location: true,
+                    organizer: true
+                }
+            })
+            res.status(200).json({event})
         } catch {
             res.status(500).json({ 'message': 'There was an error with the request!' })
         }
