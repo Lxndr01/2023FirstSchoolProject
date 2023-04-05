@@ -30,14 +30,15 @@ function Event() {
     return (
         <div>
             {events ? (
-                <><SimpleGrid columns={2} spacing={100}>
+                <><SimpleGrid columns={1} spacing={100}>
                     <Box width={{
                         base: '500px',
                         md: '500px',
                         xl: '700px',
-                        sm: '200px'
+                        sm: '200px',
+                        xs: '200px'
                     }}
-                    height={20}>
+                        height={20}>
                         <Card>
                             <CardHeader>
                                 <div><b>{events.name}</b></div>
@@ -58,12 +59,14 @@ function Event() {
                             </CardFooter>
                         </Card>
                     </Box>
-                    <Box width={[
-                        '100%',
-                        '50%',
-                        '25%',
-                        '15%',
-                    ]}>
+                    <Box width={{
+                        base: '500px',
+                        md: '500px',
+                        xl: '700px',
+                        sm: '200px',
+                        xs: '200px'
+                    }}
+                        height={'300px'}>
                         <GoogleMap zoom={10} center={{ lat: events.location.latitude, lng: events.location.longitude }} clickableIcons={false} mapContainerClassName='minimap-container'>
                             <Marker key={events.id} position={{ lat: events.location.latitude, lng: events.location.longitude }} onClick={() => setselected(events)} />
                             {selected ? <InfoWindow position={{ lat: selected.location.latitude, lng: selected.location.longitude }} onCloseClick={() => setselected(null)}>

@@ -2,6 +2,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Box } from '@chakra-ui/react';
 
 export default function CalendarHomeMade() {
 
@@ -28,12 +29,19 @@ export default function CalendarHomeMade() {
     return (
         <div>
             <h1>Calendar</h1>
+            <Box height={{
+                        md: '300px',
+                        xl: '500px',
+                        sm: '200px'
+                    }}>
             <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView='dayGridMonth'
                 weekends={true}
                 events={events}
+                height={'1000px'}
             />
+            </Box>
         </div>
     )
 }
