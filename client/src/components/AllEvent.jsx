@@ -1,10 +1,8 @@
 import { AlertDialog, AlertDialogBody, AlertDialogCloseButton, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Button, Card, CardBody, CardFooter, CardHeader, Link, useDisclosure } from '@chakra-ui/react';
 import React, { Component, useRef, } from 'react'
 import EventButton from './EventButton';
+import './hello.css'
 function AllEvent({ events }) {
-
-
-    console.log(events)
 
     return (<>
         {events ? events.map(event => {
@@ -14,11 +12,11 @@ function AllEvent({ events }) {
                         {event.name}
                     </CardHeader>
                     <CardFooter>
-                    <EventButton name={'Esemény előnézet'} id={event.id} header={event.name} eventdescription={event.description} eventdate={event.date} eventname={event.name} eventtime={event.time} buttonLeft={'igen'} buttonRight={'igen'} />
+                    <EventButton name={'Esemény előnézete'} id={event.id} header={event.name} eventdescription={event.description} eventdate={event.date} eventname={event.name} eventtime={event.time} buttonLeft={'Vissza'} buttonRight={'Megnézés'} />
                     </CardFooter>
                 </Card>
             )
-        }) : <div>Nincs elérhető esemény</div>}
+        }) : <div className='notFound'>Nincs elérhető esemény</div>}
         
     </>);
 }

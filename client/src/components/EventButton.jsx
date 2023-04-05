@@ -33,7 +33,7 @@ function EventButton({ name, header, eventname, eventdate, eventtime, eventdescr
                             {buttonLeft}
                         </Button>
                         <Link href={'/event/'+id}>
-                            <Button colorScheme='red' ml={3}>
+                            <Button colorScheme='teal' ml={3}>
                                 {buttonRight}
                             </Button>
                         </Link>

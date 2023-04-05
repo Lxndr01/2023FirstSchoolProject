@@ -23,12 +23,12 @@ function EventList() {
             })
     }
 
+
     useEffect(() => {
         callEvent()
         
     }, [])
 
-// TODO: Fixing Dynamic Routing
 return (
     <>
     {events ? <Map lat={10} lng={10} events={events} /> : null}
