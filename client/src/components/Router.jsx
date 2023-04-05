@@ -5,20 +5,17 @@ import EventList from './EventList';
 import axios from 'axios';
 import AllEvent from './AllEvent';
 import NavbarMenu from './NavBar';
-import Calend from './Calendar';
-function Router() {
+import CalendarHomeMade from './Calendar';
+export default function Router() {
 
     const [events, SetEvents] = useState(null)
 
-    const callEvent = async () => {
-        await axios.get('http://localhost:18102/api/event')
+    const callEvent = () => {
+        axios.get('http://localhost:18102/api/event')
             .then(function (response) {
-                // handle success
                 SetEvents(response.data)
-                localStorage.setItem('events', JSON.stringify(response.data))
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
     }
@@ -37,11 +34,9 @@ function Router() {
                 <Route path='/' element={<AllEvent events={events} />}></Route>
                 <Route path='/map' element={<EventList />}></Route>
                 <Route path='/event/:id' element={<Event />}></Route>
-                <Route path='/calendar' element={<Calend />}></Route>
+                <Route path='/calendar' element={<CalendarHomeMade />}></Route>
             </Routes>
         </BrowserRouter>
         </>
     );
 }
-
-export default Router;

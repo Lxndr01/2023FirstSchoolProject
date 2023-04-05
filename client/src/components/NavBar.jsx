@@ -30,9 +30,9 @@ function NavbarMenu() {
                 </MenuList>
             </Menu>
             <div>
-                <p>
-                    Event Checker
-                </p>
+                <Link href='/'>
+                Event Checker
+                </Link>
             </div>
         </HStack>
     );

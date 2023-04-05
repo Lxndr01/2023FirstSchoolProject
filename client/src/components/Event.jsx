@@ -18,7 +18,6 @@ function Event() {
             try {
                 const response = await axios.get(`http://localhost:18102/api/event/${id}`);
                 setEvents(response.data.event);
-                date = moment(events.date).format('YYYY-MM-DD')
             } catch (error) {
                 console.log(error);
             }
@@ -46,9 +45,7 @@ function Event() {
                             </CardHeader>
                             <CardBody>
                                 <div>{events.description}</div>
-                                <div>{events.date}</div>
-                                <div>{date}</div>
-                                <div>{events.time}</div>
+                                <div>{moment(events.date).format('YYYY-MM-DD HH:MM')}</div>
                             </CardBody>
                             <CardFooter>
                                 <div>{events.organizer.name}</div>
