@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.minimap-container {
+    height: 275px;
+    width: 700px;
+}
+
 .notFound {
     display: flex;
     position: absolute;
