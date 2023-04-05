@@ -6,6 +6,7 @@ import {
     Link
 } from "react-router-dom";
 import Map from './Map';
+import Router from './Router';
 function EventList() {
 
     const [events, SetEvents] = useState(null)
@@ -14,7 +15,6 @@ function EventList() {
         await axios.get('http://localhost:18102/api/event')
             .then(function (response) {
                 // handle success
-                console.log(response.data);
                 SetEvents(response.data)
             })
             .catch(function (error) {
