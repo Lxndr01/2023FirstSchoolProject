@@ -4,17 +4,21 @@ import { useParams } from "react-router-dom";
 import { GoogleMap, InfoWindow, Marker, useLoadScript } from '@react-google-maps/api';
 import './hello.css'
 import { Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, SimpleGrid } from '@chakra-ui/react';
+import moment from 'moment';
 
 function Event() {
     const { id } = useParams()
     const [events, setEvents] = useState(null)
     const [selected, setselected] = useState(null)
 
+    var date;
+
     useEffect(() => {
         const callEvent = async () => {
             try {
                 const response = await axios.get(`http://localhost:18102/api/event/${id}`);
                 setEvents(response.data.event);
+                date = moment(events.date).format('YYYY-MM-DD')
             } catch (error) {
                 console.log(error);
             }
@@ -43,6 +47,7 @@ function Event() {
                             <CardBody>
                                 <div>{events.description}</div>
                                 <div>{events.date}</div>
+                                <div>{date}</div>
                                 <div>{events.time}</div>
                             </CardBody>
                             <CardFooter>

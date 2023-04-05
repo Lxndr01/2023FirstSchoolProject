@@ -5,6 +5,7 @@ import EventList from './EventList';
 import axios from 'axios';
 import AllEvent from './AllEvent';
 import NavbarMenu from './NavBar';
+import Calend from './Calendar';
 function Router() {
 
     const [events, SetEvents] = useState(null)
@@ -36,6 +37,7 @@ function Router() {
                 <Route path='/' element={<AllEvent events={events} />}></Route>
                 <Route path='/map' element={<EventList />}></Route>
                 <Route path='/event/:id' element={<Event />}></Route>
+                <Route path='/calendar' element={<Calend />}></Route>
             </Routes>
         </BrowserRouter>
         </>
