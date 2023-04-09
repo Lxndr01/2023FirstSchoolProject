@@ -35,6 +35,21 @@ module.exports = (app, jsonParser) => {
         }
     })
 
+    app.get('/api/event/day/:day', jsonParser, async (req, res) => {
+        try {
+            const dayEvents = []
+            const events = await prisma.event.findMany()
+            events.forEach(element => {
+                if(moment(element.date).format('YYYY-MM-DD') === moment(req.params.day).format('YYYY-MM-DD')){
+                    dayEvents.push(element)
+                }
+            });
+            res.status(200).json({dayEvents})
+        } catch {
+            res.status(500).json({ 'message': 'There was an error with the request!' })
+        }
+    })
+
     app.post('/api/event', jsonParser, async (req, res) => {
         try {
             const event = await prisma.event.create({

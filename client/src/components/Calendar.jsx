@@ -1,12 +1,27 @@
+import React, { Component } from 'react';
+import { useEffect, useRef, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import { useEffect, useState } from 'react'
+import interactionPlugin from '@fullcalendar/interaction';
 import axios from 'axios'
-import { Box } from '@chakra-ui/react';
+import { AlertDialog, AlertDialogBody, AlertDialogCloseButton, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Box, Button, useDisclosure } from '@chakra-ui/react';
+import EventButton from './EventButton';
+import './hello.css'
+import moment from 'moment';
+import { useNavigate } from 'react-router';
 
 export default function CalendarHomeMade() {
 
+    let navigate = useNavigate();
+
     const [events, setEvents] = useState([]);
+    const [isPop, SetIsPop] = useState(false);
+
+    const onClick = (e) => {
+        SetIsPop(true)
+        let path = '/calendar/day/' + moment(e.dateStr).format('YYYY-MM-DD')
+        navigate(path) 
+    }
 
     useEffect(() => {
         const callEvent = async () => {
@@ -16,7 +31,7 @@ export default function CalendarHomeMade() {
                     id: element.id,
                     title: element.name,
                     start: new Date(element.date),
-                    allDay:  true,
+                    allDay: true,
                 }));
                 setEvents(events)
             } catch (error) {
@@ -30,17 +45,18 @@ export default function CalendarHomeMade() {
         <div>
             <h1>Calendar</h1>
             <Box height={{
-                        md: '300px',
-                        xl: '500px',
-                        sm: '200px'
-                    }}>
-            <FullCalendar
-                plugins={[dayGridPlugin]}
-                initialView='dayGridMonth'
-                weekends={true}
-                events={events}
-                height={'1000px'}
-            />
+                md: '300px',
+                xl: '500px',
+                sm: '200px'
+            }}>
+                <FullCalendar
+                    plugins={[dayGridPlugin, interactionPlugin]}
+                    initialView='dayGridMonth'
+                    weekends={true}
+                    events={events}
+                    height={'1000px'}
+                    dateClick={onClick}
+                />
             </Box>
         </div>
     )

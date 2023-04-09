@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "603f8b94-8fc4-4c08-a472-ae9d07781da0",
+		"name": "BeadandoJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24125655"
+	},
+	"item": [
+		{
+			"name": "GETLocation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18102/api/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTLocation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test\",\n    \"longitude\": 47.440404,\n    \"latitude\": 16.903770\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTLocation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c6d9ae7b687c4c60766a0\",\n    \"name\":\"test2\",\n    \"longitude\": 11.021212,\n    \"latitude\":11.023232\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETELocation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c6d9ae7b687c4c60766a0\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETOrganizer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18102/api/organizer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"organizer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTOrganizer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test\",\n    \"email\":\"test\",\n    \"phone\":\"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/organizer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"organizer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTOrganizer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c6fcdf360fa70fcb2c959\",\n    \"name\":\"test\",\n    \"email\":\"test\",\n    \"phone\":\"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/organizer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"organizer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEOrganizer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c6fcdf360fa70fcb2c959\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/organizer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"organizer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETEvent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18102/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTEvent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"tes322t\",\n    \"date\":\"2023-01-31T10:00:00.000Z\",\n    \"time\":\"132321\",\n    \"description\":\"dasds23232\",\n    \"locationId\": \"642d6cdfe0268e88d4d5cf44\",\n    \"organizerId\":\"642c879001b66a924bb4a2cf\"\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTEvent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c8aa27f81c236065c0503\",\n    \"name\":\"testesemeny\",\n    \"date\":\"2019-01-31T10:00:00.000Z\",\n    \"time\":\"132321\",\n    \"description\":\"dasdsa\",\n    \"locationId\": \"642c6bc757d201fc89920820\",\n    \"organizerId\":\"642c879001b66a924bb4a2cf\"\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEEvent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"642c8aa27f81c236065c0503\"\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18102/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETSingleEvent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18102/api/event/642c94ecd158f142fbe5dd64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"event",
+						"642c94ecd158f142fbe5dd64"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEventByDay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18102/api/day/event/2023-03-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18102",
+					"path": [
+						"api",
+						"day",
+						"event",
+						"2023-03-28"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -67,7 +67,7 @@ function Event() {
                         xs: '200px'
                     }}
                         height={'300px'}>
-                        <GoogleMap zoom={10} center={{ lat: events.location.latitude, lng: events.location.longitude }} clickableIcons={false} mapContainerClassName='minimap-container'>
+                        {isLoaded ? <GoogleMap zoom={10} center={{ lat: events.location.latitude, lng: events.location.longitude }} clickableIcons={false} mapContainerClassName='minimap-container'>
                             <Marker key={events.id} position={{ lat: events.location.latitude, lng: events.location.longitude }} onClick={() => setselected(events)} />
                             {selected ? <InfoWindow position={{ lat: selected.location.latitude, lng: selected.location.longitude }} onCloseClick={() => setselected(null)}>
                                 <div>
@@ -78,7 +78,7 @@ function Event() {
                                     <p>For more info click on this <a href={'/event/' + selected.id}>link.</a></p>
                                 </div>
                             </InfoWindow> : null}
-                        </GoogleMap>
+                        </GoogleMap> : 'Google Maps betöltése'}
                     </Box>
                 </SimpleGrid>
 
