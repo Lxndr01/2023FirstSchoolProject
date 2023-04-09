@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow, InfoBox } from '@react-go
 import './hello.css'
 import axios from 'axios'
 import NavbarMenu from './NavBar'
+import markerImage from '../assets/marker.png'
 
 //AIzaSyCjr0Er26-gT8HT8XI2x-Ix7uFMG7casuA
 export default function Map({ lat, lng }) {
@@ -36,7 +37,7 @@ export default function Map({ lat, lng }) {
     return (
         <>
             <GoogleMap zoom={3} center={{ lat: lat, lng: lng }} clickableIcons={false} mapContainerClassName='map-container'>
-                {events ? events.map((event) => { return (<Marker key={event.id} position={{ lat: event.location.latitude, lng: event.location.longitude }} onClick={() => setselected(event)} />) }) : null}
+                {events ? events.map((event) => { return (<Marker animation={2} title={event.name} key={event.id} draggable={false} position={{ lat: event.location.latitude, lng: event.location.longitude }} onClick={() => setselected(event)} />) }) : null}
                 {selected ? <InfoWindow position={{ lat: selected.location.latitude, lng: selected.location.longitude }} onCloseClick={() => setselected(null)}>
                     <div>
                         <p>Event name: <b>{selected.name}</b></p>

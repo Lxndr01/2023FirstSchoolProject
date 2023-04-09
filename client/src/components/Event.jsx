@@ -68,7 +68,7 @@ function Event() {
                     }}
                         height={'300px'}>
                         {isLoaded ? <GoogleMap zoom={10} center={{ lat: events.location.latitude, lng: events.location.longitude }} clickableIcons={false} mapContainerClassName='minimap-container'>
-                            <Marker key={events.id} position={{ lat: events.location.latitude, lng: events.location.longitude }} onClick={() => setselected(events)} />
+                            <Marker key={events.id} label={events.name} title={events.name} position={{ lat: events.location.latitude, lng: events.location.longitude }} onClick={() => setselected(events)} />
                             {selected ? <InfoWindow position={{ lat: selected.location.latitude, lng: selected.location.longitude }} onCloseClick={() => setselected(null)}>
                                 <div>
                                     <p>Event name: <b>{selected.name}</b></p>
